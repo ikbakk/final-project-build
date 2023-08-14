@@ -1,5 +1,5 @@
 import path from "path";
-import "dotenv/config";
+import * as dotenv from "dotenv";
 import cors from "cors";
 import bodyParser from "body-parser";
 import { config } from "./utils/config";
@@ -13,6 +13,7 @@ import {
   videosRouter,
 } from "./routes";
 
+dotenv.config();
 const app: Express = express();
 app.use(cors());
 app.use(bodyParser.json());
