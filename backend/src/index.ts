@@ -35,8 +35,8 @@ app.use("/api/videos", videosRouter);
 app.use("/api/search", searchRouter);
 app.use(unknownEndpoint);
 
-connectToDB(config.databaseUrl).then(() => {
-  app.listen(config.port, () => {
-    console.log(`Server running on port ${config.port}`);
-  });
+connectToDB(config.databaseUrl);
+
+app.listen(config.port, () => {
+  console.log(`Server running on port ${config.port}`);
 });

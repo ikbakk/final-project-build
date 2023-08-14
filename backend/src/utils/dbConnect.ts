@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
-export const connectToDB = async (url: string) => {
-  await mongoose.connect(url, { socketTimeoutMS: 10000 });
+export const connectToDB = (url: string) => {
+  mongoose.connect(url, { socketTimeoutMS: 10000 });
   const db = mongoose.connection;
 
   db.once("connected", () => {
