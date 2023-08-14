@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",
-    "start": "node build/index.js",
+    "start": "node index.js",
     "dev": "concurrently \"pnpm exec tsc --watch\" \"nodemon ./build/index.js\"",
     "postbuild": "mv node_modules ./build"
   },
