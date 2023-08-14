@@ -29,7 +29,8 @@ app.use("/api/products", routes_1.productsRouter);
 app.use("/api/videos", routes_1.videosRouter);
 app.use("/api/search", routes_1.searchRouter);
 app.use(middlewares_1.unknownEndpoint);
-(0, dbConnect_1.connectToDB)(config_1.config.databaseUrl);
-app.listen(config_1.config.port, () => {
-    console.log(`Server running on port ${config_1.config.port}`);
+(0, dbConnect_1.connectToDB)(config_1.config.databaseUrl).then(() => {
+    app.listen(config_1.config.port, () => {
+        console.log(`Server running on port ${config_1.config.port}`);
+    });
 });
